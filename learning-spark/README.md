@@ -37,7 +37,69 @@ export PATH=$PATH:$SPARK_HOME/bin/:$SPARK_HOME/sbin
 
 `
 $ SPARK_HOME/sbin/stop-slave.sh
+
 $ SPARK_HOME/sbin/stop-master.sh
 `
+
+## Installing Anaconda
+### Prerequesites
+1. Obtain next dependencies
+`
+yum install libXcomposite libXcursor libXi libXtst libXrandr alsa-lib mesa-libEGL libXdamage mesa-libGL libXScrnSaver
+
+`
+2. Download Anaconda linux from the website
+
+3. Execute next command `bash Anaconda3-2020.11-Linux-x86_64.sh`
+
+4. After installation completes, we need to refresh the environment variables executing `~/.bashrc`
+
+5. Then `conda config --set auto_activate_base True`
+
+6. To verify the installation we need to execute `conda list` and if a list of packages is displayed, the installation is working.
+
+7. To open anaconda execute `anaconda-navigator`
+
+## Installing and linking Jupyter with Spark
+1. Execute `conda install jupyter`
+
+2. Execute `conda update juputer`
+
+3. Then we need to link spark with iPython notebooks using the next configuration
+`
+echo "export PATH=$PATH:~/opt/spark/bin" >> .profile
+
+echo "export PYSPARK_DRIVER_PYTHON=ipython" >> .profile
+
+echo "export PYSPARK_DRIVER_PYTHON_OPTS='notebook' pyspark" >> .profile
+
+source .profile
+
+`
+
+4. Create a folder for notebooks in the preferred option
+
+5. To verify the installation execute 'pyspark' from command line and a web interface will open.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
