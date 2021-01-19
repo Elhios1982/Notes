@@ -167,6 +167,7 @@ Kafka Topic
 * Each broker knows about all brokers, topics and partitions (metadata)
 
 Kafka Client ------> Kafka Cluster
+
 			* Broker 101
 
 			* Broker 102
