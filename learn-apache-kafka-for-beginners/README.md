@@ -24,9 +24,42 @@
 
 2. Under `/opt/kafka/data` create a folder called `zookeeper`
 
-3. Under `/opt/kafka/config` we need to edit `zookeeper.properties` file
+3. Under `/opt/kafka/data create a folder called `kafka`
 
-	* In the file, we need to change the `dataDir` variable to `/opt/kafka/data/zookeeper` 
+4. Under `/opt/kafka/config` we need to edit `zookeeper.properties` file
+
+	* In the file, we need to change the configuration for `dataDir` to `/opt/kafka/data/zookeeper`
+
+5. Under `/opt/kafka/config` we need to edit `server.properties` file
+	
+	* In the file, we need to change the configuration for `log.dirs` to `/opt/kafka/data/kafka`
+
+## Kafka init sequence
+1. Go to `cd /opt/kafka/` and then execute next command to start zookeeper `bin/zookeeper-server-start.sh config/zookeeper.properties`
+
+	* If you get the message `INFO binding to port 0.0.0.0/0.0.0.0:2181`
+
+	* Then go to `cd /opt/kafka/data` and verify folder `version-2` is created
+
+2. Go to `/opt/kafka/` and execute `kafka-server-start.sh config/server.properties`
+
+	* Then verify that you got the message `INFO [KafkaServer id=0] started`
+
+	* Then go to `data/kafka` and verify the next 5 files have been created
+
+		* cleaner-oofset-checkpoint
+
+		* meta.properties
+
+		* replication-offset-checkpoint
+
+		* log-start-offset-checkpoint
+
+		* recovery-point-offset-checkpoint
+
+
+
+
 
 # Kafka Theory
 
