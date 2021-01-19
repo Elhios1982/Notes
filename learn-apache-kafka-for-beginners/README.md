@@ -1,3 +1,33 @@
+# Kafka Installation
+## Kafka download and extraction
+1. Download the binary file from apache kafka website
+
+2. Make sure JVM 8 or higher is installed
+
+3. Untar binary file downloaded using `tar -xvf kafka_2.13-2.7.0.tgz`
+
+4. Move kafka extracted folder to /opt/kafka using `mv kafka kafka_2.13-2.7.0.tgz`
+
+## Kafka environment configuration
+1. Open `vim ~/.bashrc` file
+
+2. Add next configuration to file
+
+	* `export KAFKA_HOME=/opt/kafka`
+
+	* `export PATH=$PATH:$KAFKA_HOME/bin/`
+
+3. Enable changes using `source ~/.bashrc`
+
+## Initialize Kafka
+1. Under `/opt/kafka/` we need to create a folder called `data`
+
+2. Under `/opt/kafka/data` create a folder called `zookeeper`
+
+3. Under `/opt/kafka/config` we need to edit `zookeeper.properties` file
+
+	* In the file, we need to change the `dataDir` variable to `/opt/kafka/data/zookeeper` 
+
 # Kafka Theory
 
 ## Topics, partitions and offsets
