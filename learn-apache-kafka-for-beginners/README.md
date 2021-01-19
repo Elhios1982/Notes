@@ -168,9 +168,13 @@ Kafka Topic
 
 Kafka Client ------> Kafka Cluster
 			* Broker 101
+
 			* Broker 102
+
 			* Broker 103
+
 			* Broker 104
+
 			* Broker 105
 
 1. Kafka Client to kafka Cluster: Connection + Metadata request
